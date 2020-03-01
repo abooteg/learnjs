@@ -57,7 +57,7 @@ console.log(car.needRepair);
 let item = { 
     name: 'Intel core i7', 
     price: '150$',
-    discount: '15%'
+    discount: '35%'
 };
 let price = parseInt(item.price);
 let discount = parseInt(item.discount);
@@ -83,7 +83,7 @@ if (!isNaN(price) && !isNaN(discount)) {
 
 let product = {
     name: 'Яблоко',
-    price: '10$'
+    price: '30$'
 };
 
 let min = 10; // минимальная цена
