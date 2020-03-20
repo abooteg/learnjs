@@ -26,7 +26,7 @@ for (let i = a2.length - 1; i >= 0; i--) {
 console.log(b2);
 
 // 3. Факториал числа - произведение всех натуральных чисел от 1 до n
-// включительно: 3! = 3*2*1, 5! = 5*4*3*2*1. С помощью циклов вычислить факториал числа 10. Использовать for.
+// включительно: 3! = 3*2*1, 5! = 5*4*3*2*1. С помощью циклов вычислить факториал числа 10. Использовать for.x  
 
 let a3 = 1;
 
@@ -78,31 +78,3 @@ for (let value in list) {
     list[value] = list[value].toUpperCase();
     console.log(list[value]);
 }
-
-let user = {"name":"Smith", age: 30};
-console.log(user.name);
-console.log(+'-' + 2);
-let str = '123';
-let result = +str;
-console.log(typeof(result), result);
-
-let foo = { str: 'test' }; 
-console.log(foo && foo.str);
-
-let arr = [];
-arr[500] = 1;
-console.log(arr);
-
-var x = 1; 
-if (x) {
-  var x = 2; 
-  console.log(x);
-} 
-console.log(Boolean(undefined)); 
-
-console.log(typeof NaN);
-
-const z = 1;
-z = 20;
-z++
-console.log(z);
