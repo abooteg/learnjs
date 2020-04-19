@@ -1,4 +1,4 @@
-// Переделать функцию с использованием функции-стрелки (в методе reduce тоже использовать arrow function):
+// Переделать функцию с использованием функции-стрелки (в методе reduce тоже использовать arrow function): 
 
 // function sum() {
 //   const params = Array.prototype.slice.call(arguments);
