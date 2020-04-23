@@ -19,11 +19,11 @@ const minus = function (firstValue) {
         return console.log(result);
     }
 };
-// minus(10)(6); // 4
-// minus(5)(6); // -1
-// minus(10)(); // 10
-// minus()(6); // -6
-// minus()(); // 0
+minus(10)(6); // 4
+minus(5)(6); // -1
+minus(10)(); // 10
+minus()(6); // -6
+minus()(); // 0
 
 // Реализовать функцию, которая умножает и умеет запоминать возвращаемый результат между вызовами:
 // function multiplyMaker ...
@@ -45,10 +45,10 @@ function multiplyMaker(firstValue) {
     };
 }
 const multiply = multiplyMaker(2);
-// console.log(multiply(2));
-// console.log(multiply(1));
-// console.log(multiply(3));
-// console.log(multiply(10));
+console.log(multiply(2));
+console.log(multiply(1));
+console.log(multiply(3));
+console.log(multiply(10));
 
 // 3. Реализовать модуль, который работает со строкой и имеет методы:
 // a. установить строку
@@ -92,9 +92,9 @@ const newModule = {
 
 };
 newModule.setString("awdawd123");
-// newModule.getString();
-// newModule.getStringLenght();
-// newModule.getReverseString();
+newModule.getString();
+newModule.getStringLenght();
+newModule.getReverseString();
 
 
 // 4. Создайте модуль “калькулятор”, который умеет складывать, умножать, вычитать, делить и возводить в степень. Конечное значение округлить до двух знаков после точки (значение должно храниться в обычной переменной, не в this).
