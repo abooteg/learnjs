@@ -57,15 +57,14 @@ const table = document.createElement("table");
 const thead = document.createElement("thead");
 const tbody = document.createElement("tbody");
 
-
 let tableHead = {
-    numbers: "#",
-    name: "Name",
-    email: "Email",
-    balance: "Balance",
-    gender: "Gender",
-    age: "Age",
-    phone: "Phone"
+  numbers: "#",
+  name: "Name",
+  email: "Email",
+  balance: "Balance",
+  gender: "Gender",
+  age: "Age",
+  phone: "Phone",
 };
 
 // * Добавление на страницу основных элементов таблицы
@@ -76,28 +75,31 @@ table.insertAdjacentElement("beforeend", tbody);
 
 // * Добавление заголовков таблицы
 
-function addTableHead(el){
-    const tr = document.createElement("tr");
-    thead.insertAdjacentElement("afterbegin", tr);
-    for(let key in el){
-        tr.insertAdjacentHTML("beforeend", `<th id=${key}>${el[key]}</th>`);
-    }
+function addTableHead(el) {
+  const tr = document.createElement("tr");
+  thead.insertAdjacentElement("afterbegin", tr);
+  for (let key in el) {
+    tr.insertAdjacentHTML("beforeend", `<th id=${key}>${el[key]}</th>`);
+  }
 }
 addTableHead(tableHead);
 
-
 // * Добавление инфомрации в таблицу из объекта
 
-function addTableBody(el, table){
-    for(let i = 0; i<el.length;i++){
-        tbody.insertAdjacentHTML("beforeend", `<tr id="${i+1}"><th>${i+1}</th></tr>`);
-        for(let userKeys in table){
-            for(let userKeys1 in el[i]){
-                if(userKeys === userKeys1){
-                    document.getElementById(i+1).insertAdjacentHTML("beforeend", `<th>${el[i][userKeys]}</th>`);  
-                }
-            }
+function addTableBody(el, table) {
+  let i = 1;
+  el.forEach((element) => {
+    tbody.insertAdjacentHTML("beforeend", `<tr id="${i}"><th>${i}</th></tr>`);
+    for (let userKeys in table) {
+      for (let userKeys1 in element) {
+        if (userKeys === userKeys1) {
+          document
+            .getElementById(i)
+            .insertAdjacentHTML("beforeend", `<th>${element[userKeys]}</th>`);
         }
+      }
     }
+    i++;
+  });
 }
 addTableBody(users, tableHead);
