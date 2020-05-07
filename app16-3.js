@@ -63,7 +63,9 @@ let tableHead = {
     name: "Name",
     email: "Email",
     balance: "Balance",
-    gender: "Gender"
+    gender: "Gender",
+    age: "Age",
+    phone: "Phone"
 };
 
 // * Добавление на страницу основных элементов таблицы
@@ -83,24 +85,19 @@ function addTableHead(el){
 }
 addTableHead(tableHead);
 
-// * Проверка активных заголовков и создание новых объектов
-
-
 
 // * Добавление инфомрации в таблицу из объекта
 
 function addTableBody(el, table){
     for(let i = 0; i<el.length;i++){
         tbody.insertAdjacentHTML("beforeend", `<tr id="${i+1}"><th>${i+1}</th></tr>`);
-        for(let userKeys in el[i]){
-            for(let userKeys1 in table){
+        for(let userKeys in table){
+            for(let userKeys1 in el[i]){
                 if(userKeys === userKeys1){
-                    document.getElementById(i+1).insertAdjacentHTML("beforeend", `<th class="awd">${el[i][userKeys]}</th>`);  
+                    document.getElementById(i+1).insertAdjacentHTML("beforeend", `<th>${el[i][userKeys]}</th>`);  
                 }
             }
         }
     }
 }
 addTableBody(users, tableHead);
-
-console.log(container);
