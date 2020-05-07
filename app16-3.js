@@ -48,33 +48,42 @@ const users = [
     registered: "2016-03-04T03:36:38 -02:00",
     nestedField: { total: 200 },
   },
+  {
+    _id: "5d220b10e8265cc978e2586b",
+    isActive: true,
+    balance: 2853.33,
+    age: 20,
+    name: "Buckner Osborne",
+    gender: "male",
+    company: "EMPIRICA",
+    email: "bucknerosborne@empirica.com",
+    phone: "+1 (850) 411-2997",
+    registered: "2018-08-13T04:28:45 -03:00",
+    nestedField: { total: 300 },
+  },
 ];
 
 // * Объявление переменных
-
 const container = document.body.querySelector("div.container");
 const table = document.createElement("table");
 const thead = document.createElement("thead");
 const tbody = document.createElement("tbody");
-
 let tableHead = {
   numbers: "#",
   name: "Name",
   email: "Email",
-  balance: "Balance",
   gender: "Gender",
   age: "Age",
   phone: "Phone",
+  balance: "Balance",
 };
 
 // * Добавление на страницу основных элементов таблицы
-
 container.insertAdjacentElement("afterbegin", table);
 table.insertAdjacentElement("afterbegin", thead);
 table.insertAdjacentElement("beforeend", tbody);
 
 // * Добавление заголовков таблицы
-
 function addTableHead(el) {
   const tr = document.createElement("tr");
   thead.insertAdjacentElement("afterbegin", tr);
@@ -85,7 +94,6 @@ function addTableHead(el) {
 addTableHead(tableHead);
 
 // * Добавление инфомрации в таблицу из объекта
-
 function addTableBody(el, table) {
   let i = 1;
   el.forEach((element) => {
@@ -103,3 +111,13 @@ function addTableBody(el, table) {
   });
 }
 addTableBody(users, tableHead);
+
+function addTotalBalance(user, table){
+  let totalBalance = 0;
+  let colspanN = Object.keys(table).length;
+  user.forEach(element => {
+    totalBalance += element.balance;
+  });
+  tbody.insertAdjacentHTML("beforeend", `<tr><th class="totalBalance" colspan="${colspanN}">Total Balance: ${totalBalance}</th></tr>`);
+}
+addTotalBalance(users, tableHead);
