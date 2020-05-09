@@ -75,6 +75,8 @@ let tableHead = {
   gender: "Gender",
   age: "Age",
   phone: "Phone",
+  registered: "registered",
+  company: "Company",
   balance: "Balance",
 };
 
