@@ -76,7 +76,6 @@ let tableHead = {
   age: "Age",
   phone: "Phone",
   registered: "registered",
-  company: "Company",
   balance: "Balance",
 };
 
